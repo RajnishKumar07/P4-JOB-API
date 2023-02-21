@@ -12,18 +12,18 @@ P4-JOB-API is a RESTful API that provides endpoints to interact with a job datab
 
 To install the dependencies, clone the repository and run the following command:
 
-npm install
+`npm install`
 
 Create a `.env` file and add the following variables:
 
-MONGO_URI=<your-mongodb-uri>
-JWT_SECRET=<your-jwt-secret>
-JWT_LIFETIME=<token-expire-time>
+MONGO_URI="<your-mongodb-uri>"
+JWT_SECRET="<your-jwt-secret>"
+JWT_LIFETIME="<token-expire-time>"
 
 ## Usage
 
 To start the server, run the following command:
-npm start
+`npm start`
 
 
 By default, the server will run on port 3000. You can change the port by setting the `PORT` environment variable.
@@ -34,8 +34,8 @@ By default, the server will run on port 3000. You can change the port by setting
 
 | Endpoint         | Method | Description            | Request Body                          |
 |------------------|--------|------------------------|---------------------------------------|
-| `/api/auth/signup`    | POST   | Create a new user      | `{ "email": "<email>", "password": "<password>" }` |
-| `/api/auth/login`     | POST   | Login with an existing user | `{ "email": "<email>", "password": "<password>" }` |
+| `/api/auth/signup`    | POST   | Create a new user      | `{ "email": "string", "password": "string" }` |
+| `/api/auth/login`     | POST   | Login with an existing user | `{ "email": "string", "password": "string" }` |
 
 ### Jobs
 
@@ -43,8 +43,8 @@ By default, the server will run on port 3000. You can change the port by setting
 |------------------|--------|------------------------|---------------------------------------|
 | `/api/jobs`       | GET    | Get all jobs           | -                                     |
 | `/api/jobs/:id`   | GET    | Get a single job by ID | -                                     |
-| `/api/jobs`       | POST   | Create a new job       | `{ "title": "<title>", "description": "<description>", "location": "<location>" }` |
-| `/api/jobs/:id`   | PUT    | Update a job by ID     | `{ "title": "<title>", "description": "<description>", "location": "<location>" }` |
+| `/api/jobs`       | POST   | Create a new job       | `{ "title": "string", "description": "string", "location": "string" }` |
+| `/api/jobs/:id`   | PATCH    | Update a job by ID     | `{ "title": "string", "description": "string", "location": "string" }` |
 | `/api/jobs/:id`   | DELETE | Delete a job by ID     | -                                     |
 
 
